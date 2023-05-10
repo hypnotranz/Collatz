@@ -1,0 +1,7 @@
+**Lemma (Binary Decomposition Lemma):** Given a binary number \(k\) with bits \(k_i\), where \(k_i\) is either 0 or 1, the operation of multiplying \(k\) by 3, shifting it left \(n\) places, and adding \(2^m\) can be decomposed into separate operations on each bit of \(k\), plus the final addition of \(2^m\). Specifically, we have:
+
+$$
+3k \times 2^n + 2^m = \sum_{i=0}^{n} 3k_i 2^{i+n} + 2^m
+$$
+
+Each term in the sum is either 0 (if \(k_i = 0\)) or \(3 \times 2^{i+n}\) (if \(k_i = 1\)).

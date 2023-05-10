@@ -1,0 +1,14 @@
+
+**Lemma 2 (Sum Simplification Lemma):** Given a binary number \(k\) with bits \(k_i\), where \(k_i\) is either 0 or 1, and positive integers \(n\) and \(m\) such that \(n > m\), the sum
+
+$$
+\sum_{i=0}^{n-m} 3k(n-i)2^{n-i} + 2^m
+$$
+
+can be simplified to:
+
+$$
+2^m - 3k(2^{m+1} - 2^{n+1} - 2^m m + 2^{n+1} n)
+$$
+
+This is not a sum of geometric series, but it is a combination of terms involving powers of 2. The terms involving \(k\) are multiplied by a difference of powers of 2, and the term \(2^m\) is a power of 2.
