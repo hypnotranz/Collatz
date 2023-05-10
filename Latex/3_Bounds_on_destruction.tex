@@ -1,0 +1,29 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}
+
+\begin{document}
+
+\section{Bounded Destructive Magnitude: Formal Justification}
+
+\begin{theorem}[Bounded Destructive Magnitude]
+Let \( y \) be a positive integer with binary representation of the form \( (d_1 d_2 \ldots d_p 0^q)_2 \), where \( d_1, d_2, \ldots, d_p \) are binary digits, \( d_p = 1 \), and \( 0^q \) represents a sequence of \( q \) trailing zeros. Then, the magnitude of the destructive mode \( R(y) \) of the binary representation of \( y \) under the destructive function \( D \) is bounded above by \( q \) bits per even iteration.
+\end{theorem}
+
+\begin{proof}
+Let \( y \) be a positive integer with binary representation \( (d_1 d_2 \ldots d_p 0^q)_2 \), where \( d_p = 1 \) and \( 0^q \) represents a sequence of \( q \) trailing zeros. The destructive function \( D \) is defined by iteratively dividing a positive integer \( y \) by 2 until the result is odd. Formally, for \( y = k \cdot 2^m \) where \( k \) is an odd positive integer and \( m \in \mathbb{N} \), the destructive function is defined as
+\[ D(y) = k \]
+The number of divisions, \( m \), represents the magnitude of the destructive mode.
+
+Applying the destructive function \( D \) iteratively to \( y \) until the result is odd, we observe that each division by 2 removes one trailing zero from the binary representation of the number. After \( q \) divisions, we obtain an odd number \( (d_1 d_2 \ldots d_p)_2 \) with no trailing zeros.
+
+The key observation is that the maximum reduction in the number of bits occurs when the number of trailing zeros \( q \) is maximized. In this case, the operation results in a reduction of \( q \) bits compared to the original number of bits in \( y \).
+
+Therefore, we can formally conclude that the magnitude of the destructive mode \( R(y) \) is bounded above by \( q \) bits per even iteration, as the maximum reduction in the number of bits occurs when the number of trailing zeros \( q \) is maximized. This bound holds for all positive integers \( y \) in the sequence.
+\end{proof}
+
+\end{document}

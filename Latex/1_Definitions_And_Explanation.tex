@@ -1,0 +1,40 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+
+\begin{document}
+
+\section{Definitions and Explanation}
+
+\begin{definition}[Constructive Function]
+Let \( C \colon \mathbb{N}_{\text{odd}} \to \mathbb{N} \) be the constructive function defined by
+\[ C(x) = 3x + 1 \]
+for all \( x \in \mathbb{N}_{\text{odd}} \).
+\end{definition}
+
+\begin{definition}[Destructive Function]
+Let \( D \colon \mathbb{N} \to \mathbb{N}_{\text{odd}} \) be the destructive function defined by iteratively dividing a positive integer \( y \) by 2 until the result is odd. Formally, for \( y = k \cdot 2^m \) where \( k \) is an odd positive integer and \( m \in \mathbb{N} \), the destructive function is defined as
+\[ D(y) = k \]
+The number of divisions, \( m \), represents the magnitude of the destructive mode.
+\end{definition}
+
+\begin{definition}[Collatz Process]
+The Collatz process for \( n \in \mathbb{N} \) is a sequence of applications of the constructive function \( C \) and the destructive function \( D \), starting with \( C(n) \) and alternating between \( C \) and \( D \) until reaching the value 1. The process is denoted as \( \mathcal{P}(n) \).
+\end{definition}
+
+\begin{definition}[Magnitude of Constructive and Destructive Modes]
+Let \( b \colon \mathbb{N} \to \mathbb{N} \) be a function that maps a positive integer to the number of bits in its binary representation. The magnitude of the constructive mode for \( x \in \mathbb{N}_{\text{odd}} \), denoted by \( G(x) \), is given by
+\[ G(x) = b(C(x)) - b(x) \]
+The magnitude of the destructive mode for \( y \in \mathbb{N} \) with \( y = k \cdot 2^m \), denoted by \( R(y) \), is given by
+\[ R(y) = m \]
+\end{definition}
+
+\begin{definition}[Mode Oscillation]
+The mode oscillation in the Collatz process refers to the alternation between the constructive mode, represented by the function \( C \), and the destructive mode, represented by the function \( D \). The oscillation between these modes serves as a clock for normalizing the \( x \)-axis, providing a uniform means for assessing the magnitudes of construction and destruction. The values of \( G(x) \) and \( R(y) \) represent the magnitudes of the constructive and destructive modes, respectively, for the given positive integers \( x \) and \( y \). The Collatz process \( \mathcal{P}(n) \) can be analyzed in terms of these magnitudes to study the behavior of the sequence.
+\end{definition}
+
+\end{document}
