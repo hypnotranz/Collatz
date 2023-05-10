@@ -1,38 +1,48 @@
 \documentclass{article}
-\usepackage{amsmath}
-\usepackage{amssymb}
+\usepackage{amsthm}
+
+\newtheorem{lemma}{Lemma}
 
 \begin{document}
 
-\title{Lemmas}
-\maketitle
+\begin{lemma}[Increment Property for $x + b$ where $b$ is odd]
+    Given an integer $x = k \cdot 2^m$, where $k$ is an odd integer and $m \geq 0$, we defined \texttt{increment(x)} as $x + b$, where $b$ is an odd integer. We proved that repeated execution of \texttt{increment(x)} leads to increasing values of $m$ at a rate $r = 1$ per iteration. This is because $k + b$ is always even (since the sum of two odd numbers is even), and we can always factor out a 2, increasing $m$ by 1. The output of this function can be expressed as \texttt{increment(k)}$*2^{m+r}$, where \texttt{increment(k)} $= k + b$.
+    \end{lemma}
 
-\section{Lemma 1: Increment Property for \(x + b\) where \(b\) is odd}
+\begin{lemma}[Non-Increment Property for $3x$]
+    We analyzed the function \texttt{increment(x)} defined as $x' = 3x$, where $x = k \cdot 2^m$ and $k$ is an odd integer. We showed that repeated execution of \texttt{increment(x)} does not lead to increasing values of $m$. This is because $3k$ is odd (as the product of two odd numbers), and we cannot factor out a 2 from $3k$, so $m$ stays the same. This shows that the function $3x$ does not exhibit the property of increasing $m$ with each iteration, unlike the function $x + b$ where $b$ is an odd number.
+    \end{lemma}
+        
 
-Given an integer \(x = k \cdot 2^m\), where \(k\) is an odd integer and \(m \geq 0\), we defined \texttt{increment(x)} as \(x + b\), where \(b\) is an odd integer. We proved that repeated execution of \texttt{increment(x)} leads to increasing values of \(m\) at a rate \(r = 1\) per iteration. This is because \(k + b\) is always even (since the sum of two odd numbers is even), and we can always factor out a 2, increasing \(m\) by 1. The output of this function can be expressed as \texttt{increment(k)}\( \cdot 2^{m+r}\), where \texttt{increment(k)} = \(k + b\).
+\begin{lemma}[Distributive Property for $3x$ and Binary Representation]
+    We showed that any integer $x$ can be represented in binary as a sum of powers of 2, each multiplied by a binary digit $b(i)$ which is either 0 or 1. This can be written as:
+    
+    \[x = b(0)*2^0 + b(1)*2^1 + \ldots + b(n)*2^n\]
+    
+    When you multiply $x$ by 3, you're multiplying each term in the sum by 3, which gives:
+    
+    \[3x = 3*b(0)*2^0 + 3*b(1)*2^1 + \ldots + 3*b(n)*2^n\]
+    
+    This is a direct application of the distributive property of multiplication over addition, which states that the multiplication of a number by a sum is equal to the sum of the multiplication of the number by each term in the sum.
+    \end{lemma}
+        
 
-\section{Lemma 2: Non-Increment Property for \(3x\)}
 
-We analyzed the function \texttt{increment(x)} defined as \(x' = 3x\), where \(x = k \cdot 2^m\) and \(k\) is an odd integer. We showed that repeated execution of \texttt{increment(x)} does not lead to increasing values of \(m\). This is because \(3k\) is odd (as the product of two odd numbers), and we cannot factor out a 2 from \(3k\), so \(m\) stays the same. This shows that the function \(3x\) does not exhibit the property of increasing \(m\) with each iteration, unlike the function \(x + b\) where \(b\) is an odd number.
+    \begin{lemma}[Factoring or Inverse Distributive Property]
+        The inverse of the distributive property is often referred to as factoring. Factoring is the process of finding the common factor in multiple terms and expressing the original expression as the product of this common factor and the remaining terms. For example, the expression:
+        
+        \[3x * b(0)*2^0 + 3x * b(1)*2^1 + \ldots + 3x * b(n)*2^n\]
+        
+        can be factored to:
+        
+        \[3x * (b(0)*2^0 + b(1)*2^1 + \ldots + b(n)*2^n)\]
+        
+        This is the original expression factored. The expression inside the parentheses is the sum of the remaining terms after factoring out the common factor.
+        \end{lemma}
+        
 
-\section{Lemma 3: Distributive Property for \(3x\) and Binary Representation}
 
-We showed that any integer \(x\) can be represented in binary as a sum of powers of 2, each multiplied by a binary digit \(b(i)\) which is either 0 or 1. This can be written as:
 
-\(x = b(0) \cdot 2^0 + b(1) \cdot 2^1 + \ldots + b(n) \cdot 2^n\)
-
-When you multiply \(x\) by 3, you're multiplying each term in the sum by 3, which gives:
-
-\(3x = 3 \cdot b(0) \cdot 2^0 + 3 \cdot b(1) \cdot 2^1 + \ldots + 3 \cdot b(n) \cdot 2^n\)
-
-This is a direct application of the distributive property of multiplication over addition, which states that the multiplication of a number by a sum is equal to the sum of the multiplication of the number by each term in the sum.
-
-\section{Lemma 4: Factoring or Inverse Distributive Property}
-
-The inverse of the distributive property is often referred to as factoring. Factoring is the process of finding the common factor in multiple terms and expressing the original expression as the product of this common factor and the remaining terms. For example, the expression:
-
-\(3x \cdot b(0) \cdot 2^0 + 3x \cdot b(1) \cdot 2^1 + \ldots + 3x \cdot b(n) \cdot 2^n\)
-
-can be factored to:
-
-\(3x \cdot (b(
+    ```latex
+    \end{document}
+    
